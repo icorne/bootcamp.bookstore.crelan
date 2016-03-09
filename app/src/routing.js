@@ -9,24 +9,13 @@
     function routing($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'templates/books.html',
-                controller: 'BooksController',
-                controllerAs: 'model'
+                template: '<cl-books></cl-books>'
             })
             .when('/books', {
-                templateUrl: 'templates/books.html',
-                controller: 'BooksController',
-                controllerAs: 'model'
+                template: '<cl-books></cl-books>'
             })
-            .when('/books/:bookId', {
-                templateUrl: 'templates/bookDetails.html',
-                controller: 'BooksController',
-                controllerAs: 'model'
-            })
-            .when('/books/add', {
-                templateUrl: 'templates/books.html',
-                controller: 'BooksController',
-                controllerAs: 'model'
+            .when('/books/:id', {
+                template: '<cl-book-detail></cl-book-detail>',
             })
             .otherwise('/');
     }

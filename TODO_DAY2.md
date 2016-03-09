@@ -35,7 +35,7 @@ NB: `run()` vs `.config()` ?
 Everything is a component: Let's turn everything into its own component
 Here are your new routes:
 
-`.when('/', {
+```.when('/', {
    template: '<cl-books></cl-books>'
   })
  .when('/books', {
@@ -44,7 +44,7 @@ Here are your new routes:
  .when('/books/:id', {
    template: '<cl-book-detail></cl-book-detail>',
   })
- `
+ ```
 - Refactory your application to reflect these changes using directives
   - `books` directive
   -  Replace `ng-include` with a directive `cl-navbar
