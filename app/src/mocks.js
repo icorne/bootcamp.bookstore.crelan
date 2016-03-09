@@ -4,9 +4,10 @@
     function mocks($httpBackend) {
         $httpBackend.whenGET('/api/books').respond(getBooks());
 
-        $httpBackend.whenGET(new RegExp('\\/books\\/[0-9]+'))
+        $httpBackend.whenGET(new RegExp('\\/api\\/books\\/[0-9]+'))
             .respond(function (method, url) {
-                var regexp = new RegExp('\\/books\\/([0-9]+)');
+                debugger;
+                var regexp = new RegExp('\\/api\\/books\\/([0-9]+)');
                 var bookID = url.match(regexp)[1];
                 var book = getBooks().filter(function (book) {
                     return book.bookID === Number(bookID);

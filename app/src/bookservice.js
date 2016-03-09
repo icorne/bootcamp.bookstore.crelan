@@ -10,15 +10,11 @@
 
         function getBookById(bookId) {
             var deferred = $q.defer();
-            var allBooks = getBooks();
-            var book;
-            for (var i = 0; i < allBooks.length; i++) {
-                var bookEl = allBooks[i];
-                if (bookEl.bookID === bookId) {
-                    book = bookEl;
-                }
+            var bookPromise = $http.get('/api/books/' + bookId);
+            bookPromise.then(success);
+            function success(response) {
+                deferred.resolve(response.data);
             }
-            deferred.resolve(book);
             return deferred.promise;
 
         }
@@ -26,12 +22,9 @@
         function getBooks() {
             var deferred = $q.defer();
             var booksPromise = $http.get('/api/books');
-            booksPromise.then(success).catch(error);
+            booksPromise.then(success);
             function success(response) {
                 deferred.resolve(response.data);
-            }
-            function error(resp) {
-                console.log(resp);
             }
 
             return deferred.promise;
