@@ -1,27 +1,27 @@
-<div class="row animated fadeInUpSmall">
+<div class="row animated fadeInUpSmall" ng-controller="BookDetailsController as bookCtrl">
   <form class="col s12">
     <div class="row">
       <div class="input-field col s6">
-        <input  type="text" class="validate">
+        <input ng-model="bookCtrl.book.title" type="text" class="validate">
         <label for="first_name">Title</label>
       </div>
       <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
+        <input ng-model="bookCtrl.book.author" id="last_name" type="text" class="validate">
         <label for="last_name">Author</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6">
-        <input  type="number" class="validate">
+        <input ng-model="bookCtrl.book.price" type="number" class="validate">
         <label for="first_name">Price</label>
       </div>
     </div>
     <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Description</label>
-        </div>
+      <div class="input-field col s12">
+        <textarea ng-model="bookCtrl.book.description" id="textarea1" class="materialize-textarea"></textarea>
+        <label for="textarea1">Description</label>
       </div>
+    </div>
     <div class="row">
       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="mdi-content-send right"></i>

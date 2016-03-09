@@ -2,12 +2,18 @@
 	'use strict';
 
   angular.module('bookstore')
-    .controller('BooksController', BooksController)
+    .controller('BooksController', BooksController);
 
-    function BooksController(bookFactory){
-      this.books = bookFactory.getBooks();
+  BooksController.$inject=['bookService'];
+
+    function BooksController(bookService){
+      var booksPromise = bookService.getBooks();
+
+      booksPromise.then(success.bind(this));
+      function success(result) {
+        this.books = result;
+      }
     }
 
-    BooksController.$inject = ['bookFactory'];
 
 })();

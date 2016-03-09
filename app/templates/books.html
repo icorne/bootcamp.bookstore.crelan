@@ -1,4 +1,4 @@
-<div class="row" ng-controller='BooksController as model'>
+<div class="row">
   <input type="search" ng-model="model.searchTerm">
   <!-- Container for all the books -->
   <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in model.books | filter:model.searchTerm">

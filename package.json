@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server",
-    "deploy": "surge"
+    "deploy": "surge",
+    "test": "karma start"
   },
   "keywords": [],
   "author": "davy@philos.io",
   "license": "MIT",
   "devDependencies": {
+    "angular": "^1.4.9",
+    "angular-mocks": "^1.4.9",
     "live-server": "^0.9.2"
   },
   "dependencies": {

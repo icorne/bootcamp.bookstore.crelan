@@ -5,6 +5,7 @@
 
     $httpBackend.whenGET(new RegExp('\\/books\\/[0-9]+'))
     .respond(function(method, url){
+      debugger;
       var regexp = new RegExp('\\/books\\/([0-9]+)');
       var bookID = url.match(regexp)[1];
       var book = getBooks().filter(function(book){
@@ -23,6 +24,8 @@
 })();
 
 function getBooks(){
+
+  debugger;
   return [
     {
       bookID: 9809,
