@@ -24,12 +24,10 @@
         }
 
         function getBooks() {
-            debugger;
             var deferred = $q.defer();
             var booksPromise = $http.get('/api/books');
             booksPromise.then(success).catch(error);
             function success(response) {
-                debugger;
                 deferred.resolve(response.data);
             }
             function error(resp) {

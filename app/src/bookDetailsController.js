@@ -6,6 +6,10 @@
 
     function BookDetailsController($routeParams, bookService) {
         var bookId = $routeParams.bookId;
-        this.book = bookService.getBookById(bookId);
+        var bookPromise =bookService.getBookById(bookId);
+        bookPromise.then(success);
+        function success(response) {
+            this.book = response;
+        }
     }
 })();
